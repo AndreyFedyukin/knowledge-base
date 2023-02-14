@@ -1,0 +1,358 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans:wght@600&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  /* font-family: Open Sans, Roboto, sans-serif; */
+  font-family: Open Sans, sans-serif;
+  font-style: normal;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: normal;
+}
+
+:root {
+  --color-white: #ffffff;
+  --color-dark: #333333;
+  --color-gray: #999999;
+  --color-darkgray: #424242;
+  --color-gold: #ccb26e;
+  --color-orange: #ff5c00;
+  --color-black: #000000;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}
+
+button:hover {
+  cursor: pointer;
+}
+
+a,
+button:active,
+:focus {
+  outline: none;
+}
+
+/* !Для более удобной визуализации во время вёртки */
+/* div {
+  outline: 1px solid red;
+} */
+
+.container {
+  max-width: 2678px;
+  margin: 0 auto;
+}
+
+.section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background: var(--color-darkgray);
+  padding: 30px;
+}
+
+.box {
+  max-width: 100%;
+  background: var(--color-white);
+  border-radius: 10px;
+  margin: 0.62rem;
+}
+
+/* Первый блок -------------------------------------- */
+.box-one {
+  width: 176px;
+  height: 310px;
+  padding: 0 0 0 30px;
+}
+
+.title {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 25px;
+  color: var(--color-dark);
+  margin-bottom: 1.25em;
+}
+
+.check {
+  display: inline-block;
+  cursor: pointer;
+  padding-left: 1.5em;
+  margin-right: 0.62em;
+  margin-bottom: 1.25em;
+}
+
+.check__input {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.check__box {
+  position: absolute;
+  width: 0.94em;
+  height: 0.94em;
+  border: 1px solid var(--color-gray);
+  box-sizing: border-box;
+  border-radius: 3px;
+  transform: translateY(3.5px);
+  margin-left: -1.5em;
+}
+
+.check p {
+  display: inline;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  color: var(--color-dark);
+}
+
+/* Стилизация checkbox */
+.check__input:checked + .check__box {
+  background-image: url("../img/check.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  border: 1px solid var(--color-gold);
+}
+
+.check__input:focus + .check__box {
+  border: 1px solid var(--color-gold);
+}
+
+/* Второй блок -------------------------------------- */
+.box-select {
+  width: 176px;
+  height: 39px;
+}
+
+.choices.is-open {
+  background-color: var(--color-white);
+  border-radius: 10px 10px 0 0;
+}
+
+.choices__inner {
+  position: relative;
+  border-radius: 10px;
+  z-index: 2;
+}
+
+.is-open .choices__inner {
+  border-radius: 10px;
+}
+
+.is-focused .choices__inner,
+.is-open .choices__inner {
+  border: 1px solid var(--color-gold);
+}
+
+/* Стилизация галочки */
+.choices[data-type*="select-one"]:after {
+  height: 8px;
+  width: 8px;
+  z-index: 3;
+  top: 40%;
+  border: 1px solid var(--color-gold);
+  border-width: 0 0 1px 1px;
+  transform: rotate(-45deg);
+}
+
+.choices[data-type*="select-one"].is-open:after {
+  top: 60%;
+  border: 1px solid var(--color-gold);
+  border-width: 1px 1px 0 0;
+}
+
+.choices__list--dropdown .choices__placeholder {
+  display: none;
+}
+
+.choices__list--dropdown {
+  padding-top: 10px;
+}
+
+.choices__list--dropdown .choices__item--selectable {
+  padding-right: 10px;
+}
+
+.choices__list--dropdown.is-active {
+  border: 1px solid var(--color-gold);
+  border-top-width: 0;
+  border-radius: 0 0 10px 10px;
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded] {
+  border-radius: 0 0 10px 10px;
+}
+
+.choices__list--dropdown,
+.choices__list[aria-expanded]:hover,
+.choices__list[aria-expanded]:focus {
+  border: 1px solid var(--color-gold);
+  border-top: none;
+}
+
+.choices__placeholder {
+  opacity: 1;
+}
+
+.choices__list[aria-expanded] .choices__item--selectable {
+  padding-right: 0;
+}
+
+/* Третий блок -------------------------------------- */
+.box-map {
+  width: 460px;
+  height: 460px;
+}
+
+[class*="ground-pane"] {
+  filter: grayscale(1);
+}
+
+/* Четвертый блок -------------------------------------- */
+.simplebar-content-wrapper {
+  overflow: auto;
+}
+
+.box-scrollbar {
+  width: 399px;
+  height: 310px;
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 170%;
+  color: var(--color-dark);
+  border-radius: 0px;
+  padding: 20px 30px;
+}
+
+.simplebar-scrollbar {
+  width: 6px;
+  background-color: var(--color-gold);
+  border-radius: 5px;
+}
+
+.simplebar-scrollbar::before {
+  background-color: var(--color-gold) !important;
+}
+
+.simplebar-content-wrapper {
+  overflow: auto;
+}
+
+/* Пятый блок -------------------------------------- */
+.box-form {
+  width: 440px;
+  background-color: var(--color-black);
+  border-radius: 10px;
+  padding: 20px 30px;
+}
+
+.form {
+  display: block;
+}
+
+.form__label {
+  font-size: 12px;
+  line-height: 14px;
+  color: var(--color-orange);
+  margin-left: 20px;
+}
+
+.form__input {
+  width: 380px;
+  background: var(--color-white);
+  border: 1px solid var(--color-orange);
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 14px;
+}
+
+/* !почему-то не работает? надо разобраться */
+.form__input:last-child {
+  margin: 0px;
+}
+
+.form__bt {
+  width: 192px;
+  height: 60px;
+  background: var(--color-orange);
+  color: var(--color-white);
+  border-radius: 10px;
+  margin-top: 16px;
+}
+
+/* Шестой блок -------------------------------------- */
+.box-tooltip {
+  position: relative;
+  width: 375px;
+  max-height: 160px;
+  border-radius: 0;
+  padding: 20px 30px;
+}
+
+.box-tooltip__text {
+  font-family: Open Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 170%;
+  color: var(--color-dark);
+  margin: 0;
+}
+
+.box-tooltip__marker {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  background-image: url(/img/marker.svg);
+  background-repeat: no-repeat;
+  transform: translateY(3px);
+  cursor: pointer;
+  margin-left: 5px;
+}
+
+.box-tooltip__prompt {
+  position: absolute;
+  width: 163px;
+  height: 37.28px;
+  bottom: 47px;
+  right: 27px;
+  background-image: url(/img/promt.svg);
+  background-repeat: no-repeat;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.box-tooltip__marker:hover {
+  background-image: url(/img/marker-gold.svg);
+}
+
+.box-tooltip__marker:hover + .box-tooltip__prompt {
+  opacity: 1;
+}

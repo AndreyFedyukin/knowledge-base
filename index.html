@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Домашнее задание №16</title>
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="library/choices.min.css">
+  <link rel="stylesheet" href="css/style.css">
+
+  <!-- Подключение скролла -->
+  <link rel="stylesheet" href="https://unpkg.com/simplebar@latest/dist/simplebar.css" />
+  <script src="https://unpkg.com/simplebar@latest/dist/simplebar.min.js"></script>
+
+  <script src="https://unpkg.com/just-validate@latest/dist/just-validate.production.min.js"></script>
+</head>
+
+<body>
+  <main>
+    <section class="container section">
+      <!-- Первый блок -------------------------------------- -->
+      <div class="box box-one">
+        <h2 class="title">Категории:</h2>
+        <form action="#">
+          <label class="check">
+            <input class="check__input" type="checkbox">
+            <span class="check__box"></span>
+            <p>Динозавры</p>
+          </label>
+          <label class="check">
+            <input class="check__input" type="checkbox">
+            <span class="check__box"></span>
+            <p>Медведи</p>
+          </label>
+          <label class="check">
+            <input class="check__input" type="checkbox">
+            <span class="check__box"></span>
+            <p>Косули</p>
+          </label>
+          <label class="check">
+            <input class="check__input" type="checkbox">
+            <span class="check__box"></span>
+            <p>Лисы</p>
+          </label>
+          <label class="check">
+            <input class="check__input" type="checkbox">
+            <span class="check__box"></span>
+            <p>Волки</p>
+          </label>
+          <label class="check">
+            <input class="check__input" type="checkbox">
+            <span class="check__box"></span>
+            <p>Олени и лоси</p>
+          </label>
+        </form>
+      </div>
+
+      <!-- Второй блок -------------------------------------- -->
+      <div class="box box-select">
+        <select class="materials" id="materials">
+          <option value="">Материал</option>
+          <option>Древесина</option>
+          <option>Металл</option>
+          <option>Камень</option>
+          <option>Пластик</option>
+          <option>Композитный</option>
+          <option>Гипс</option>
+        </select>
+      </div>
+
+      <!-- Третий блок -------------------------------------- -->
+      <div class="box box-map" id="myMap1"></div>
+
+      <!-- Четвертый блок -------------------------------------- -->
+      <div class="box box-scrollbar" id="scroll">
+        Сложно сказать, почему многие известные личности представлены в исключительно положительном свете. Лишь активно
+        развивающиеся страны третьего мира будут объективно рассмотрены соответствующими инстанциями. Мы вынуждены
+        отталкиваться от того, что высокотехнологичная концепция общественного уклада представляет собой интересный
+        эксперимент проверки глубокомысленных рассуждений. Имеется спорная точка зрения, гласящая примерно следующее:
+        непосредственные участники технического прогресса освещают чрезвычайно интересные особенности картины в целом,
+        однако конкретные выводы, разумеется, обнародованы. Значимость этих проблем настолько очевидна, что
+        социально-экономическое развитие, а также свежий взгляд на привычные вещи - безусловно открывает новые горизонты
+        для первоочередных требований.
+      </div>
+
+      <!-- Пятый блок -------------------------------------- -->
+      <div class="box box-form">
+        <form action="#" class="form">
+          <label for="fname" class="form__label">Как вас зовут?</label>
+          <input class="form__input" name="Имя" type="text" id="fname" placeholder="Имя*" data-validate-field="name">
+
+          <label for="tel" class="form__label">Укажите ваш телефон</label>
+          <input class="form__input" name="tel" type="tel" id="tel" placeholder="Телефон*" data-validate-field="tel"
+            data-validate-rules="phone">
+
+          <label for="email" class="form__label">Укажите ваш e-mail</label>
+          <input class="form__input" name="email" type="email" id="email" placeholder="E-mail*"
+            data-validate-field="mail">
+
+          <button class="form__bt">Заказать</button>
+        </form>
+      </div>
+
+      <!-- Шестой блок -------------------------------------- -->
+      <div class="box box-tooltip">
+        <p class="box-tooltip__text">
+          Следует отметить, что <br> социально-экономическое развитие способствует повышению качества переосмысления
+          <br>
+          внешнеэкономических политик.
+          <span class="box-tooltip__marker"></span>
+          <span class="box-tooltip__prompt"></span>
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <!-- Подключение библтотек -->
+  <script src="library/choices.min.js"></script>
+  <script src="library/inputmask.min.js"></script>
+  <script src="library/just-validate.min.js"></script>
+
+  <!-- Работа с картой -->
+  <script src="https://api-maps.yandex.ru/2.1/?apikey=ваш API-ключ&lang=ru_RU" type="text/javascript">
+  </script>
+
+  <!-- Подключение файла JS -->
+  <script src="js/script.js"></script>
+</body>
+
+</html>
