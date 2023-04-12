@@ -1,3 +1,3 @@
-# 16_knowledge-base
+# Knowledge-base
 <br>
 Страница в процессе оформления
